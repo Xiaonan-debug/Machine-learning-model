@@ -1,0 +1,24 @@
+============================= test session starts ==============================
+platform linux -- Python 3.9.15, pytest-7.2.0, pluggy-1.0.0
+rootdir: /workspace
+collected 13 items
+tests/test_a_environment.py .                                            [  7%]
+tests/test_a_setup.py .                                                  [ 15%]
+tests/test_naive_bayes.py .......                                        [ 69%]
+tests/test_scipy.py ..                                                   [ 84%]
+tests/test_utils.py ..                                                   [100%]
+=============================== warnings summary ===============================
+tests/test_naive_bayes.py::test_tiny_dataset_a
+tests/test_naive_bayes.py::test_smoothing
+  /workspace/src/naive_bayes.py:120: RuntimeWarning: divide by zero encountered in log
+    beta = np.log((upper+self.smoothing) /(lower + vocab_size*self.smoothing))
+tests/test_naive_bayes.py::test_tiny_dataset_b
+  /workspace/src/naive_bayes_em.py:125: RuntimeWarning: divide by zero encountered in log
+    beta = np.log((upper+self.smoothing)/(lower+self.smoothing*vocab_size))
+tests/test_naive_bayes.py::test_tiny_dataset_b
+tests/test_naive_bayes.py::test_em_likelihood_always_increases
+tests/test_naive_bayes.py::test_comparison_naive_bayes
+  /workspace/src/naive_bayes_em.py:185: RuntimeWarning: divide by zero encountered in log
+    return stable_log_sum(np.log(prediction) + Repeat + Multiply)
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 13 passed, 6 warnings in 1.96s ========================

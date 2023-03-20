@@ -1,0 +1,27 @@
+============================= test session starts ==============================
+platform linux -- Python 3.9.15, pytest-7.2.0, pluggy-1.0.0
+rootdir: /workspace
+collected 17 items
+tests/test_a_environment.py .                                            [  5%]
+tests/test_a_setup.py .                                                  [ 11%]
+tests/test_custom_transform.py F                                         [ 17%]
+tests/test_loss.py ..                                                    [ 29%]
+tests/test_model.py ....                                                 [ 52%]
+tests/test_perceptron.py ..                                              [ 64%]
+tests/test_regularization.py ...                                         [ 82%]
+tests/test_relu.py ..F                                                   [100%]
+=================================== FAILURES ===================================
+____________________________ test_custom_transform _____________________________
+>       new_X = custom_transform(X)
+tests/test_custom_transform.py:11:
+>       raise NotImplementedError
+E       NotImplementedError
+src/data_transform.py:22: NotImplementedError
+____________________________ test_relu_fit_circles _____________________________
+>       assert accuracy_after == 1.0
+E       assert 0.97 == 1.0
+tests/test_relu.py:76: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_custom_transform.py::test_custom_transform - NotImplemented...
+FAILED tests/test_relu.py::test_relu_fit_circles - assert 0.97 == 1.0
+========================= 2 failed, 15 passed in 7.40s =========================
