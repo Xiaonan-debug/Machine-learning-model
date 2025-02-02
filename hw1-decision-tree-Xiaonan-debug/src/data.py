@@ -25,6 +25,7 @@ def load_data(data_path):
     feature_columns = [col for col in df.columns if col != "class"]
     features = df[feature_columns].to_numpy()
     target = df[["class"]].to_numpy()
+    a = 1
 
     return features, target, feature_columns
 
